@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <array>
+#include <vector>
 
 using namespace std;
 
@@ -88,6 +89,12 @@ public:
 	}
 };
 
+struct PokeMon
+{
+	int number;
+	string name;
+};
+
 template<int N, typename T>
 class Array
 {
@@ -98,12 +105,12 @@ private:
 public:
 	T& operator[](int index)
 	{
-		return HumanInCity[index];
+		return value[index];
 	}
 
 	T& at(int index)
 	{
-		retuen value[index];
+		return value[index];
 		//cout << "나이 : " << HumanInCity[index].age << ", 이름 : " << HumanInCity[index].name << endl;
 	}
 };
@@ -128,7 +135,9 @@ void Ex1()
 
 	Func2<4>();
 
-	cout << Min(1, 5);
+	Func3<5, int>;
+
+	cout << Min(1, 5)<<endl;
 }
 
 int main()
@@ -141,14 +150,36 @@ int main()
 	Person p3 = Min<Person>(p1, p2);
 
 	cout << p3.name << "나이가 더 어리다" << endl;
+	cout << endl;
 
 	People<5> busan;
 	busan[0] = { 15,"이순신" };
 	busan.at(0);
+	cout << endl;
 
 	Array<5, Person> seoul;
 	seoul[0] = { 13, "장보고" };
-	seoul.at(0);
-	cout << seoul[0].name << endl;
+	seoul.at(1) = { 15,"고주몽" };
+	cout <<"나이 : "<< seoul[0].age<<", 이름  : " << seoul[0].name << endl;
+	cout << seoul[1].name << endl;
+	cout << seoul.at(0).name << endl;
+	cout << seoul.at(1).name << endl;
+	cout << endl;
 
+	Array<10, PokeMon> MyPokemons;
+	MyPokemons[0] = { 1,"이상해씨" };
+	cout <<"번호 : "<<MyPokemons.at(0).number<<", 이름 : " << MyPokemons.at(0).name << endl;
+	cout <<"번호 : "<<MyPokemons[0].number << ", 이름 : " << MyPokemons[0].name << endl;
+	cout << endl;
+
+	std::array<PokeMon,10> mPokemons;
+	mPokemons[0] = { 1, "이상해씨"};
+	cout << "번호 : " << mPokemons.at(0).number << ", 이름 : " << mPokemons.at(0).name << endl;
+	cout << endl;
+
+	std::vector<PokeMon> pokemon(10);
+	pokemon[0] = { 1, "이상해씨" };
+	pokemon[1] = { 2, "꼬부기" };
+	cout << "번호 : " << pokemon.at(0).number << ", 이름 : " << pokemon.at(0).name << endl;
+	cout << "번호 : " << pokemon[0].number << ", 이름 : " << pokemon[0].name << endl;
 }
