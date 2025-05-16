@@ -1,5 +1,5 @@
 
-#include "ConsoleUtility.h"
+#include <ConsoleUtility.h>
 #include <iostream>
 #include <conio.h>
 #include "Pokeball.h"
@@ -33,16 +33,16 @@ void Display(int index)
 {
 	for (int i = 0; i < N; i++)
 	{
-		if (i==index)
+		if (i == index)
 		{
-			cout << "▣ " ;
+			cout << "▣ ";
 		}
 		else
 		{
-			cout <<  "□ ";
+			cout << "□ ";
 		}
-	 }
-		
+	}
+
 }
 
 template<int N>
@@ -57,11 +57,11 @@ void Display2D(int index)
 		{
 			if (i == width && y == height)
 			{
-				cout << "▣";
+				cout << "▣ ";
 			}
 			else
 			{
-				cout << "□";
+				cout << "□ ";
 			}
 		}
 		cout << endl;
@@ -71,8 +71,10 @@ void Display2D(int index)
 
 int main()
 {
+	ConsoleUtil::SetCursorVisible(false);
+
 	int selectedIndex = 0;
-	char input;
+	int input;
 
 	std::array<PokeMon*, 40> pokeballs;
 
@@ -87,48 +89,51 @@ int main()
 
 	while (true)
 	{
-		system("cls");
 		
+
 		const int size = 10; // const 필수
 		int sizePow = size * size;
 
+		ConsoleUtil::GotoXY(0, 0);
 		Display2D<size>(selectedIndex);
 
-		input = _getch();
+		if (_kbhit())
+		{
+			input = _getch();
 
-		if (input == LEFT)
-		{
-			//cout << "왼쪽";
-			selectedIndex = (selectedIndex - 1 + sizePow) % sizePow; // 0~5
+			if (input == LEFT)
+			{
+				//cout << "왼쪽";
+				selectedIndex = (selectedIndex - 1 + sizePow) % sizePow; // 0~5
 
-		}
-		else if (input == RIGHT)
-		{
-			selectedIndex = (selectedIndex + 1) % sizePow;
-		}
-		else if (input == UP)
-		{
-			selectedIndex = (selectedIndex - size + sizePow) % sizePow;
-		}
-		else if (input == DOWN)
-		{
-			selectedIndex = (selectedIndex + size) % sizePow;
-		}		
-		else if (input == ENTER)
-		{
-			
-			break;
+			}
+			else if (input == RIGHT)
+			{
+				selectedIndex = (selectedIndex + 1) % sizePow;
+			}
+			else if (input == UP)
+			{
+				selectedIndex = (selectedIndex - size + sizePow) % sizePow;
+			}
+			else if (input == DOWN)
+			{
+				selectedIndex = (selectedIndex + size) % sizePow;
+			}
+			else if (input == ENTER)
+			{
+
+				break;
+			}
+			system("cls");
 		}
 
 		ConsoleUtil::GotoXY(30, 0);
 		cout << "몬스터 UI";
 		ConsoleUtil::GotoXY(30, 1);
-		cout << "몬스터 UI";
-		cout << pokeballs[selectedIndex]->get_name() << endl;
+		cout << "No_" << pokeballs[selectedIndex]->get_number() << pokeballs[selectedIndex]->get_name() << endl;
 	}
-	
-		cout<<pokeballs[selectedIndex]->get_name() << endl;
-	
+
+	cout << pokeballs[selectedIndex]->get_name() << endl;
+
 }
 
- 

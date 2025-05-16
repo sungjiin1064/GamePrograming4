@@ -23,7 +23,10 @@ public:
 
 	static void SetCursorVisible(bool visible)
 	{
-		
+		CONSOLE_CURSOR_INFO c = { 0 };
+		c.dwSize = 1;
+		c.bVisible = visible;
+		SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &c);
 	}
 
 };

@@ -4,6 +4,12 @@
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{B46E157F-D1F7-4C88-BAB3-0AFA37666989}|..\\Ch1_GenericProgramming\\Ch1_GenericProgramming.vcxproj|C:\\Users\\user\\Desktop\\GamePrograming4\\Ch1_GenericProgramming\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F6C5A0B-2FF7-49E2-88CF-3AD71D5D9B0C}|..\\Ch2_ConsoleGame_GenericExample\\Ch2_ConsoleGame_GenericExample.vcxproj|C:\\Users\\user\\Desktop\\GamePrograming4\\Ch2_ConsoleGame_GenericExample\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{748A452F-E0AC-44F7-A7FC-385A79BFB5DB}|..\\UtilityProject\\UtilityProject.vcxproj|C:\\Users\\user\\Desktop\\GamePrograming4\\UtilityProject\\ConsoleUtility.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,7 +19,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 268,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -29,13 +35,39 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\GamePrograming4\\Ch2_ConsoleGame_GenericExample\\main.cpp",
+              "RelativeDocumentMoniker": "..\\Ch2_ConsoleGame_GenericExample\\main.cpp",
+              "ToolTip": "C:\\Users\\user\\Desktop\\GamePrograming4\\Ch2_ConsoleGame_GenericExample\\main.cpp",
+              "RelativeToolTip": "..\\Ch2_ConsoleGame_GenericExample\\main.cpp",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAAGUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-16T01:16:11.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConsoleUtility.h",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\GamePrograming4\\UtilityProject\\ConsoleUtility.h",
+              "RelativeDocumentMoniker": "..\\UtilityProject\\ConsoleUtility.h",
+              "ToolTip": "C:\\Users\\user\\Desktop\\GamePrograming4\\UtilityProject\\ConsoleUtility.h",
+              "RelativeToolTip": "..\\UtilityProject\\ConsoleUtility.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-16T01:15:47.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\GamePrograming4\\Ch1_GenericProgramming\\main.cpp",
               "RelativeDocumentMoniker": "..\\Ch1_GenericProgramming\\main.cpp",
               "ToolTip": "C:\\Users\\user\\Desktop\\GamePrograming4\\Ch1_GenericProgramming\\main.cpp",
               "RelativeToolTip": "..\\Ch1_GenericProgramming\\main.cpp",
-              "ViewState": "AgIAAKcAAAAAAAAAAAAAALgAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAcwLgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-14T11:59:39.857Z",
               "EditorCaption": ""
