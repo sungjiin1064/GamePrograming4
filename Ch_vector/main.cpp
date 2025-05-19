@@ -81,6 +81,7 @@ int main()
 		cout << nums[i] << " ";
 	}*/
 
+
 	std::vector<Monster> monsterDatabase;
 	monsterDatabase.emplace_back(1, "고블린");
 	monsterDatabase.emplace_back(2, "슬라임");
@@ -111,3 +112,4 @@ int main()
 
 //delete[] aPtr;
 //ptr = new T[N];
+
