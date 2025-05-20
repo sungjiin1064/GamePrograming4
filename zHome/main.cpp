@@ -77,32 +77,3 @@
     ~ 순차적으로 데이터를 탐색할 때 사용 (std::list, std::forward_list 등에 활용)
 */
 
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-struct Player
-{
-    std::vector<string> inventory;
-};
-
-void AddItem(Player* player, string item)
-{
-    player->inventory.push_back(item);
-}
-
-int main()
-{
-    Player hero;
-    AddItem(&hero, "마법 지팡이");
-
-    cout << "인벤토리 : ";
-    for (const auto& item : hero.inventory)
-    {
-        cout << item << " ";
-
-    }
-    cout << endl;
-
-}
