@@ -1,3 +1,16 @@
+/*
+* iterator 을 사용해서 자료구조의 element를 출력할 수 있다.
+* begin() - 컨테이너의 첫번째 요소를 가리킴, cbegin(), rbegin(), crbegin()
+* end()   - 컨테이너의 마지막 요소를 가리킴 , cend()  , rend()  , crend()
+* cbegin() - 컨테이너의 첫번째 요소를 가리키지만 const속성이 적용
+* cend()   - 컨테이너의 마지막 요소를 가리키지만 const속성이 적용
+* 역방향
+* rbegin() - 컨테이너의 마지막 요소부터 시작
+* rend()   - 컨테이너의 첫번째 요소부터 시작
+* crbegin()
+* crend()
+*/
+
 #include <iostream>
 #include <vector>
 #include <map>
@@ -7,11 +20,14 @@
 
 using namespace std;
 
+
+
 void test1()
 {
 	std::vector<int> nums = { 1,2,3,4,5 };
 	std::list<int> intlist = { 2,4,6,8,10 };
 	std::vector<int>::iterator it = nums.begin();
+	//auto it = nums.begin();
 
 	cout << "iterator 자료구조" << endl;
 	while (it != nums.end())
@@ -26,9 +42,9 @@ void test1()
 	{
 		cout << nums[i] << " ";
 	}
+	cout << endl;
 
 	std::list<int>::iterator it2 = intlist.begin();
-	cout << endl;
 
 	cout << "list 자료구조" << endl;
 	while (it2 != intlist.end())
@@ -36,6 +52,8 @@ void test1()
 		cout << *it2 << " ";
 		it2++;
 	}
+
+
 }
 
 // 역순
@@ -85,7 +103,7 @@ void test3()
 	for (auto& i : nums)
 	{
 		i = 0;
-		//cout << i << " ";
+		cout << i << " ";
 	}
 	cout << endl;
 
@@ -116,16 +134,24 @@ void test4()
 void test5()
 {
 	cout << "\n=======================" << endl;
-	std::vector<int> vec = { 1,2,3,4,5,6,7,8,9,10 };
+	std::vector<int> vec  { 1,2,3,4,5,6,7,8,9,10 };
 
-	
+	auto start = vec.begin() + 2;
+	auto finish = vec.end() - 3;
+
+	while (start != finish)
+	{
+		cout << *start << " ";
+		start++;
+	}
 }
 
 int main()
 {
 	//test1();
 	//test2();
-	//test3();
+	test3();
 	//test4();
-	find_test();
+	//test5();
+	//find_test();
 }

@@ -34,9 +34,9 @@ struct Monster
 	Monster(int id,string name) : _id(id), _name(name){}
 };
 
-void find_test2()
-{
-	std::vector<Monster> monsters;
-
-	monsters.emplace_back
-}
+//void find_test2()
+//{
+//	std::vector<Monster> monsters;
+//
+//	monsters.emplace_back
+//}
