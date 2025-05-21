@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ch4_MyVector", "..\Ch4_MyVe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ch5_STL", "..\Ch5_STL\Ch5_STL.vcxproj", "{AC75F264-D3E9-420C-B2A4-46E3ED74E522}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ch6_TownRPG", "..\Ch6_TownRPG\Ch6_TownRPG.vcxproj", "{A729D697-F708-4410-A887-04FFA37043FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{AC75F264-D3E9-420C-B2A4-46E3ED74E522}.Release|x64.Build.0 = Release|x64
 		{AC75F264-D3E9-420C-B2A4-46E3ED74E522}.Release|x86.ActiveCfg = Release|Win32
 		{AC75F264-D3E9-420C-B2A4-46E3ED74E522}.Release|x86.Build.0 = Release|Win32
+		{A729D697-F708-4410-A887-04FFA37043FE}.Debug|x64.ActiveCfg = Debug|x64
+		{A729D697-F708-4410-A887-04FFA37043FE}.Debug|x64.Build.0 = Debug|x64
+		{A729D697-F708-4410-A887-04FFA37043FE}.Debug|x86.ActiveCfg = Debug|Win32
+		{A729D697-F708-4410-A887-04FFA37043FE}.Debug|x86.Build.0 = Debug|Win32
+		{A729D697-F708-4410-A887-04FFA37043FE}.Release|x64.ActiveCfg = Release|x64
+		{A729D697-F708-4410-A887-04FFA37043FE}.Release|x64.Build.0 = Release|x64
+		{A729D697-F708-4410-A887-04FFA37043FE}.Release|x86.ActiveCfg = Release|Win32
+		{A729D697-F708-4410-A887-04FFA37043FE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
