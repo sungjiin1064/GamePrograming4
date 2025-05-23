@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ch6_TownRPG", "..\Ch6_TownR
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ch7_DataLoadAndSave", "..\Ch7_DataLoadAndSave\Ch7_DataLoadAndSave.vcxproj", "{9D461D2D-2807-4158-8430-44F61D9CCCDD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ch8_enum Vector", "..\Ch8_enum Vector\Ch8_enum Vector.vcxproj", "{EF64A056-8133-42FD-82A9-B13ADC544FC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,6 +113,14 @@ Global
 		{9D461D2D-2807-4158-8430-44F61D9CCCDD}.Release|x64.Build.0 = Release|x64
 		{9D461D2D-2807-4158-8430-44F61D9CCCDD}.Release|x86.ActiveCfg = Release|Win32
 		{9D461D2D-2807-4158-8430-44F61D9CCCDD}.Release|x86.Build.0 = Release|Win32
+		{EF64A056-8133-42FD-82A9-B13ADC544FC8}.Debug|x64.ActiveCfg = Debug|x64
+		{EF64A056-8133-42FD-82A9-B13ADC544FC8}.Debug|x64.Build.0 = Debug|x64
+		{EF64A056-8133-42FD-82A9-B13ADC544FC8}.Debug|x86.ActiveCfg = Debug|Win32
+		{EF64A056-8133-42FD-82A9-B13ADC544FC8}.Debug|x86.Build.0 = Debug|Win32
+		{EF64A056-8133-42FD-82A9-B13ADC544FC8}.Release|x64.ActiveCfg = Release|x64
+		{EF64A056-8133-42FD-82A9-B13ADC544FC8}.Release|x64.Build.0 = Release|x64
+		{EF64A056-8133-42FD-82A9-B13ADC544FC8}.Release|x86.ActiveCfg = Release|Win32
+		{EF64A056-8133-42FD-82A9-B13ADC544FC8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
