@@ -39,13 +39,14 @@ public:
 
 	void SetDropItem()
 	{
-		int index; //= ConsoleUtil::GetRandomInt;
+		int index = ConsoleUtil::GetRandomInt(dropTable.size() -1);
 
 		currentDropItem = dropTable[index];
 	}
 
 	void GetDropPoint()
 	{
-		cout << "È¹µæÇÑ °æÇèÄ¡" << endl;
+		cout << "È¹µæÇÑ °æÇèÄ¡ : " << currentDropItem._exp<< endl;
+		cout << "È¹µæÇÑ µ· : " << currentDropItem._money<< endl;
 	}
 };

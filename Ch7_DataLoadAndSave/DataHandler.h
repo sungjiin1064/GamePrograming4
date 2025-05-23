@@ -31,9 +31,18 @@ public:
 	{
 		ifstream file(filename);
 
+		
 		int exp, level;
 
 		file >> level >> exp;
+		
+
+		
+
+		_level = level;
+		_exp = exp;
+
+	
 
 	}
 };

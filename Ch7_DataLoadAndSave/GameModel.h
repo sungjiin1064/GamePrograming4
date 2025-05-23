@@ -1,7 +1,14 @@
 #pragma once
 
+/*
+* 생성자에 데이터를 직접 작성한다.
+* vector.push_back()     - 이미있는 데이터를 넣을때
+* vector.emplace_back()  - 생성하고 넣는 방식
+*/
+
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -62,7 +69,7 @@ public:
 
 		if (_maxExp == -1)
 		{
-			cout << "최대 레벨에 도달하였습니다. 실핼을 취소합니다" << endl;
+			cout << "최대 레벨에 도달하였습니다. 실행을 취소합니다" << endl;
 			return;
 		}
 
@@ -79,6 +86,29 @@ public:
 		cout << "Level " << _level << endl;
 		cout << "Exp " << _exp << endl;
 		cout << "MaxExp " << _maxExp << endl;
+	}
+
+	void SaveData(const string& filename)
+	{
+		ofstream file(filename);
+		
+		if (file.is_open())
+		{
+			file << _level << " " << _exp << " "<<_maxExp<<endl;
+			file.close();
+		}
+	}
+
+	void LoadData(const string& filename)
+	{
+		ifstream file(filename);
+
+		int level, exp, maxExp;
+
+		file >> level >> exp >> maxExp;
+
+		_level = level;
+		_exp = exp;
 	}
 };
 

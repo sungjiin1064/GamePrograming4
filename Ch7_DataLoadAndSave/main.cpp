@@ -10,11 +10,17 @@ int main()
 	Player player(0,100);
 	Monster monster(0, 0);
 
-	Data data;
-	data.SaveData("data.txt");
-	data.LoadData("data.txt");
+	//player.LoadData("player.txt");
 
-	cout<< "datadÀÇ level" << 
+	Data data;
+	//data.SaveData("data1.txt");
+	data.LoadData("data1.txt");
+
+	cout << "dataÀÇ  level : " << data._level << ", exp : " << data._exp << endl;
+
+	_getch();
+
+	int count = 0;
 
 	while (true)
 	{
@@ -22,5 +28,12 @@ int main()
 		player.GetExp(35);
 		player.Show();
 		_getch();
+
+		if (count >= 4)
+		{
+			break;
+		}
 	}
+
+	player.SaveData("player.txt");
 }
