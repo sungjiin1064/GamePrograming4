@@ -3,7 +3,9 @@
 #include <chrono>
 #include <random>
 #include "Windows.h"
+#include <iostream>
 
+using namespace std;
 
 class ConsoleUtil
 {

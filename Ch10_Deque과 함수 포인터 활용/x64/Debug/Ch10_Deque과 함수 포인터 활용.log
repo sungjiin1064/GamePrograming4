@@ -1,0 +1,28 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: 중간 디렉터리(x64\Debug\)에 다른 프로젝트(Ch10_Deque과 함수 포인터 활용.vcxproj, Ch10_Deque.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
+  main.cpp
+C:\Users\Administrator\Desktop\GamePrograming4\Ch10_Deque과 함수 포인터 활용\FP2.h(123,44): error C2969: 구문 오류: ';': 멤버 함수 정의가 '}'로 끝나야 합니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Administrator\Desktop\GamePrograming4\Ch10_Deque과 함수 포인터 활용\FP2.h(146,9): warning C4200: 비표준 확장이 사용됨: 구조체/공용 구조체의 배열 크기가 0입니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+  C:\Users\Administrator\Desktop\GamePrograming4\Ch10_Deque과 함수 포인터 활용\FP2.h(146,9):
+  이 멤버는 기본값으로 설정된 생성자 또는 복사/이동 대입 연산자에서 무시됩니다.
+  
+C:\Users\Administrator\Desktop\GamePrograming4\Ch10_Deque과 함수 포인터 활용\FP2.h(146,47): error C2997: 'RSPGame::name': 기본 멤버 이니셜라이저에서 배열 범위를 추론할 수 없습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+  C:\Users\Administrator\Desktop\GamePrograming4\Ch10_Deque과 함수 포인터 활용\FP2.h(146,9):
+  'RSPGame::name' 선언을 참조하십시오.
+  
+C:\Users\Administrator\Desktop\GamePrograming4\Ch10_Deque과 함수 포인터 활용\FP2.h(126,14): error C2059: 구문 오류: '인라인 함수 헤더'
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Administrator\Desktop\GamePrograming4\Ch10_Deque과 함수 포인터 활용\FP2.h(123,44): error C2630: 쉼표로 구분된 목록이 있어야 하는 곳에 ';'이(가) 있습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\Administrator\Desktop\GamePrograming4\Ch10_Deque과 함수 포인터 활용\FP2.h(224,10): error C2248: 'RSPGame::RSPGame': private 멤버('RSPGame' 클래스에서 선언)에 액세스할 수 없습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+  C:\Users\Administrator\Desktop\GamePrograming4\Ch10_Deque과 함수 포인터 활용\FP2.h(123,2):
+  'RSPGame::RSPGame' 선언을 참조하십시오.
+  C:\Users\Administrator\Desktop\GamePrograming4\Ch10_Deque과 함수 포인터 활용\FP2.h(121,7):
+  'RSPGame' 선언을 참조하십시오.
+  
