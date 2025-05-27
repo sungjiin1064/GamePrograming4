@@ -47,12 +47,7 @@ void VectorExample()
 	for (int i = 0; i < 1000; i++)
 	{
 		nums.push_back(i);
-	}
-
-	for (int i = 0; i < 1000; i++)
-	{
-
-	}
+	}	
 
 	cout << "임의의 데이터 vector 접근시간" << endl;
 	cout << nums[900] << endl;
@@ -70,7 +65,7 @@ void ListExample()
 	cout << "임의의 데이터 list 접근시간" << endl;
 
 	auto it = std::next(nums.begin(), 900);
-	cout << *it << endl;
+	//cout << *it << endl;
 
 }
 
@@ -86,4 +81,15 @@ int main()
 
 	ConsoleUtil::TimeCheck(VectorExample);
 	ConsoleUtil::TimeCheck(ListExample);
+	
+}
+
+void Num()
+{
+	std::vector<int> nums;
+	for (int i = 0; i < 100;i++)
+	{
+		nums.push_back(i);
+	}
+	cout << nums[10] << endl;
 }

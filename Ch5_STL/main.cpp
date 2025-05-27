@@ -53,7 +53,7 @@ void test1()
 		it2++;
 	}
 
-
+	
 }
 
 // ¿ª¼ø
@@ -148,9 +148,9 @@ void test5()
 
 int main()
 {
-	//test1();
+	test1();
 	//test2();
-	test3();
+	//test3();
 	//test4();
 	//test5();
 	//find_test();
