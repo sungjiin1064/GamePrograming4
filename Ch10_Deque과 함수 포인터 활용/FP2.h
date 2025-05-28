@@ -115,13 +115,18 @@ public:
 
 enum RSP_TYPE
 {
-	ROCK, SCISSORS, PAPER // 묵,찌,빠
+	ROCK = 1,
+	SCISSORS, 
+	PAPER // 묵,찌,빠
 };
 
 class RSPGame
 {
-	RSPGame() : userScore(0), computerScore(0);
 	void (*Action)();
+	int userScore;
+	int computerScore;
+	RSP_TYPE computerType;
+	RSP_TYPE userType;
 
 	static void Rock()
 	{
@@ -138,13 +143,6 @@ class RSPGame
 		cout << "보를 냈습니다." << endl;
 	}
 
-	RSP_TYPE computerType;
-	RSP_TYPE userType;
-
-	int userScore;
-	int computerScore;
-	//string name[] = { "바위", "가위", "보" };
-
 	void Result()
 	{
 		if (userType == computerType)
@@ -155,48 +153,106 @@ class RSPGame
 			userType == SCISSORS && computerType == PAPER ||
 			userType == PAPER && computerType == ROCK)
 		{
-			cout<< "이겼다."<< endl;
+			cout << "이겼다." << endl;
+			userScore++;
+			ConsoleUtil::GotoXY(45, 0);
+			cout << "유 저  : " << userScore << " 점" << endl;
 		}
 		else
 		{
 			cout << "졌다." << endl;
+			computerScore++;
+			ConsoleUtil::GotoXY(45, 2);
+			cout << "컴퓨터 : " << computerScore << " 점" << endl;
 		}
-	
 	}
 
-public:	
+public:
+	RSPGame() : userScore(0), computerScore(0) {};
+
+	void ShowScore()
+	{
+		ConsoleUtil::GotoXY(45, 0);
+		cout << "유 저  : " << userScore << " 점" << endl;
+		ConsoleUtil::GotoXY(45, 2);
+		cout << "컴퓨터 : " << computerScore << " 점" << endl;
+	}
+
 	void StartGame()
 	{
-		
-		cout << "0 : 바위, 1 : 가위, 2 : 보" << endl;
-		cout << "선택해주세요." << endl;
-		int input = 0;
-		cin >> input;
-		userType = static_cast<RSP_TYPE>(input);
-		
+		system("cls");
+		ShowScore();
 
-		int select = ConsoleUtil::GetRandomInt(3);
-		computerType = static_cast<RSP_TYPE>(select - 1);
-
-		switch (computerType)
+		while (true)
 		{
-		case ROCK: Action = Rock;
-			break;
-		case SCISSORS: Action = Scissors;
-			break;
-		case PAPER: Action = Paper;
-			break;
-		default:
-			cout << "잘못된 입력을 받아왔습니다." << endl;
-			return;
+			ConsoleUtil::GotoXY(0, 0);
+			cout << "1 : 바위, 2 : 가위, 3 : 보" << endl;
+			ConsoleUtil::GotoXY(0, 1);
+			cout << "선택해주세요." << endl;
+			ConsoleUtil::GotoXY(0, 2);
+			int input = 0;
+			cin >> input;
+
+			if (input < 1 || input >3)
+			{
+				cout << "잘못된 입력입니다." << endl;				
+				continue;
+			}
+
+			userType = static_cast<RSP_TYPE>(input);
+			
+
+			int select = ConsoleUtil::GetRandomInt(3);
+			computerType = static_cast<RSP_TYPE>(select);
+
+			switch (computerType)
+			{
+			case ROCK: Action = Rock;
+				break;
+			case SCISSORS: Action = Scissors;
+				break;
+			case PAPER: Action = Paper;
+				break;
+			default:
+				cout << "잘못된 입력을 받아왔습니다." << endl;
+				return;
+			}
+			cout << "유저는" << GetRSPName(userType) << " 를 냈습니다" << endl;
+			cout << "컴퓨터는 ";
+			Action();
+			Result();
+
+			if (userScore >= 3 || computerScore >= 3)
+			{
+
+				break;
+			}
+
 		}
-		cout << "유저는" << name[0] << " 를 냈습니다" << endl;
-		cout << "컴퓨터는 ";
-		Action();
-		Result();
+		if (userScore >= 3)
+		{
+			cout << "컴퓨터를 이겼다." << endl;
+
+		}
+		else if (computerScore >= 3)
+		{
+			cout << "컴퓨터가 이겼다." << endl;
+
+		}
 	}
 
 };
+
+string GetRSPName(RSP_TYPE type)
+{
+	switch (type)
+	{
+	case ROCK: return "바위";
+	case SCISSORS: return "가위";
+	case PAPER: return "보";
+	default: return "알 수 없음";
+	}
+}
 
 #pragma endregion
 void FPTest()
@@ -222,8 +278,8 @@ void FPTest2()
 void FPTest3()
 {
 	RSPGame rsp;
-	while (true)
-	{
-		rsp.StartGame();		
-	}
+	rsp.StartGame();
+
+
+
 }
