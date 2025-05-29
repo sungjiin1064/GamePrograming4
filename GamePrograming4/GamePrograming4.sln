@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ch10_Deque과 함수 활용
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ch11_STL_Containers", "..\Ch11_STL_Containers\Ch11_STL_Containers.vcxproj", "{221F3D16-180A-4CAD-B394-4EC3C61F40CD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ch12_Associate Container", "..\Ch12_Associate Container\Ch12_Associate Container.vcxproj", "{D9179C95-CF5A-4C78-9179-08D765EF0638}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{221F3D16-180A-4CAD-B394-4EC3C61F40CD}.Release|x64.Build.0 = Release|x64
 		{221F3D16-180A-4CAD-B394-4EC3C61F40CD}.Release|x86.ActiveCfg = Release|Win32
 		{221F3D16-180A-4CAD-B394-4EC3C61F40CD}.Release|x86.Build.0 = Release|Win32
+		{D9179C95-CF5A-4C78-9179-08D765EF0638}.Debug|x64.ActiveCfg = Debug|x64
+		{D9179C95-CF5A-4C78-9179-08D765EF0638}.Debug|x64.Build.0 = Debug|x64
+		{D9179C95-CF5A-4C78-9179-08D765EF0638}.Debug|x86.ActiveCfg = Debug|Win32
+		{D9179C95-CF5A-4C78-9179-08D765EF0638}.Debug|x86.Build.0 = Debug|Win32
+		{D9179C95-CF5A-4C78-9179-08D765EF0638}.Release|x64.ActiveCfg = Release|x64
+		{D9179C95-CF5A-4C78-9179-08D765EF0638}.Release|x64.Build.0 = Release|x64
+		{D9179C95-CF5A-4C78-9179-08D765EF0638}.Release|x86.ActiveCfg = Release|Win32
+		{D9179C95-CF5A-4C78-9179-08D765EF0638}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
