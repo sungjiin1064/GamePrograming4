@@ -82,7 +82,7 @@ struct Item
 {
 	int id;
 	string name;
-	
+
 	Item() = default;
 	Item(int id, string name) : id(id), name(name) {}
 
@@ -173,42 +173,55 @@ struct NewItem
 void Test5()
 {
 	std::map<string, int> map1;
-	map1.insert({"김", 0});
-	map1.insert({"임", 1});
-	//map1.insert(make_pair("다",2));
-	//map1.insert(make_pair("라",3));
+	map1.insert({ "김", 0 });
+	map1.insert({ "임", 1 });
+	map1.insert(make_pair("다", 2));
+	map1.insert(pair<string, int>("라", 3));
 
 	for (const auto& e : map1)
 	{
 		cout << "[";
 		cout << e.first << " " << e.second;
-		cout << "]"<<" ";
+		cout << "]" << " ";
 	}
-	
+
 	cout << "김 키워드에는 어떠한 숫자가 들어있습니까? " << map1["김"] << endl;
 
 	std::map<int, int> map2;
-	map2.insert({0,10});
-	map2.insert({5,100});
+	map2.insert({ 0,10 });
+	map2.insert({ 5,100 });
+	map2.insert({ 100,999 });
+	map2.insert({ 50,59 });
+	map2.insert({ 25,59 });
 
-	cout << "map2 컨테이너 안에 0이라는 키워드에는 어떠힌 숫자가 들어있습니까" << map2[0] << endl;
+	cout << "map2 컨테이너 안에 선택한 키워드에는 어떠힌 숫자가 들어있습니까? " << map2[100] << endl;
 
-	std::map<string, Item> map3;
-	map3.insert({"롱소드", Item()});
+	std::map<string, NewItem> map3;
+	map3.insert({ "롱소드", NewItem("롱소드",50,100) });
+	map3.insert({ "스피어", NewItem("스피어",30,75) });
+	map3.insert({ "롱소드", NewItem("롱소드",50,100) });
+	map3.insert({ "롱소드", NewItem("롱소드",50,100) });
 
 	//cout << "map3를 사용해서 특정이름으로 아이템을 찾는 방법" << map3["롱소드"] << endl;
+	cout << "map3안에 들어있는 이름이 롱소드인 데이터를 불러와줘" << endl;
+
+	NewItem itemInstance = map3["스피어"];
+	cout << "이름 : " << itemInstance._name <<
+		", 공격력 : " << itemInstance._ATK <<
+		", 가격 : " << itemInstance._price << endl;
+
 }
 
-#pragma endregion //미완성
+#pragma endregion 
 
 #pragma region 상점 UI 및 기능 구현하기
 
 class Player
 {
-	int money;
+	int _money;
 
 public:
-	Player(int money) : money(money) {}
+	Player(int money) : _money(money) {}
 
 	void BuyItem(NewItem item)
 	{
@@ -219,12 +232,33 @@ public:
 
 class Shop
 {
-private:
+	std::map<int, NewItem> items;
 
 public:
 	Shop()
 	{
+		items.insert({ 0, NewItem("칼", 5, 100) });
+		items.insert({ 1, NewItem("창", 4, 90) });
+		items.insert({ 2, NewItem("도끼", 3, 80) });
+		items.insert({ 3, NewItem("대검", 6, 110) });
+		items.insert({ 4, NewItem("활", 7, 120) });
+	}
 
+	void ShowItem()
+	{
+		cout << "=======================================" << endl;
+		cout << left;
+		cout << setw(10) << "인덱스  |  "<< setw(10) << "이름  |" <<setw(9) << "공격력  | " << setw(10) << "가격" << endl;
+		
+
+		for (const auto& item : items)
+		{
+			cout << "---------------------------------------" << endl;
+			cout << left;
+			cout << setw(10) << item.first << setw(13) << item.second._name <<
+				setw(9)<<item.second._ATK<< setw(10)<<item.second._price<<endl;
+		}
+		cout << "=======================================" << endl;
 	}
 
 	void SellItem(Player& player)
@@ -236,7 +270,11 @@ public:
 
 void ShopTest()
 {
+	cout << endl;
+	cout <<"상점 기능 테스트" << endl;
 
+	Shop shop1;
+	shop1.ShowItem();
 }
 
 #pragma endregion
@@ -248,5 +286,5 @@ int main()
 	//Test3();
 	//Test4();
 	//Test5();
-
+	ShopTest();
 }

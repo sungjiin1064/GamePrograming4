@@ -3,13 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\GamePrograming4\\GamePrograming4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F0AE9EA4-0623-40E2-B9CA-534535C369DC}|..\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9.vcxproj|C:\\Users\\user\\Desktop\\GamePrograming4\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\FP2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F0AE9EA4-0623-40E2-B9CA-534535C369DC}|..\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9.vcxproj|C:\\Users\\user\\Desktop\\GamePrograming4\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\DequeTest.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F0AE9EA4-0623-40E2-B9CA-534535C369DC}|..\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9.vcxproj|C:\\Users\\user\\Desktop\\GamePrograming4\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D9179C95-CF5A-4C78-9179-08D765EF0638}|..\\Ch12_Associate Container\\Ch12_Associate Container.vcxproj|C:\\Users\\user\\Desktop\\GamePrograming4\\Ch12_Associate Container\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,22 +13,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 226,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FP2.h",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\GamePrograming4\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\FP2.h",
-              "RelativeDocumentMoniker": "..\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\FP2.h",
-              "ToolTip": "C:\\Users\\user\\Desktop\\GamePrograming4\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\FP2.h",
-              "RelativeToolTip": "..\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\FP2.h",
-              "ViewState": "AgIAAOwAAAAAAAAAAADgv7UAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-28T00:52:14.786Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
@@ -49,28 +29,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\GamePrograming4\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\main.cpp",
-              "RelativeDocumentMoniker": "..\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\main.cpp",
-              "ToolTip": "C:\\Users\\user\\Desktop\\GamePrograming4\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\main.cpp",
-              "RelativeToolTip": "..\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\GamePrograming4\\Ch12_Associate Container\\main.cpp",
+              "RelativeDocumentMoniker": "..\\Ch12_Associate Container\\main.cpp",
+              "ToolTip": "C:\\Users\\user\\Desktop\\GamePrograming4\\Ch12_Associate Container\\main.cpp",
+              "RelativeToolTip": "..\\Ch12_Associate Container\\main.cpp",
+              "ViewState": "AgIAAPMAAAAAAAAAAAAmwAwBAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-28T00:52:20.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DequeTest.h",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\GamePrograming4\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\DequeTest.h",
-              "RelativeDocumentMoniker": "..\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\DequeTest.h",
-              "ToolTip": "C:\\Users\\user\\Desktop\\GamePrograming4\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\DequeTest.h",
-              "RelativeToolTip": "..\\Ch10_Deque\uACFC \uD568\uC218 \uD3EC\uC778\uD130 \uD65C\uC6A9\\DequeTest.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-28T00:52:17.834Z",
+              "WhenOpened": "2025-05-30T01:21:47.539Z",
               "EditorCaption": ""
             }
           ]
