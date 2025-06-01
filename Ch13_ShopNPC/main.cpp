@@ -45,22 +45,22 @@ public:
 		items.insert({ 3, Item("마나포션", 5, "소비") }); 
 		items.insert({ 4, Item("귀걸이", 30, "악세사리") });*/
 
-		/*items.insert({ 0, Item("강한포션", 10, "소비") });
+		items.insert({ 0, Item("강한포션", 10, "소비") });
 		items.insert(make_pair(1, Item("체력포션", 5, "소비")));
 		std::pair<int, Item> p1(2, Item("해독포션", 11, "소비"));
 		items.insert(p1);
 		items.insert({ 3, Item("마나포션", 5, "소비") });
-		items.insert({ 4, Item("스피드", 20, "소비") });*/
+		items.insert({ 4, Item("스피드포션", 20, "소비") });
 
-		items.insert({ 0, Item("롱소드", 100, "무기") });
-		items.insert(make_pair(1, Item("숏소드", 50, "무기")));
-		std::pair<int, Item> p1(2, Item("나무방패", 50, "무기"));
-		items.insert(p1);
-		items.insert({ 3, Item("강철검", 500, "무기") });
-		items.insert({ 4, Item("대검", 300, "무기") });
+		//items.insert({ 0, Item("롱소드", 100, "무기") });
+		//items.insert(make_pair(1, Item("숏소드", 50, "무기")));
+		//std::pair<int, Item> p1(2, Item("나무방패", 50, "무기"));
+		//items.insert(p1);
+		//items.insert({ 3, Item("강철검", 500, "무기") });
+		//items.insert({ 4, Item("대검", 300, "무기") });
 	}
 
-	Shop(string filename)
+	Shop(std::string filename)
 	{
 		LoadShopData(filename);
 	}
@@ -82,7 +82,7 @@ public:
 
 		int index = 0;
 
-		while (in_file.eof())
+		while (!in_file.eof())
 		{
 			in_file >> name >> price >> type;
 			items.insert({ index ,Item(name, price, type)});
@@ -128,7 +128,7 @@ public:
 		string headersize = "012345678901234567890123456789012345678901234567890123456789";
 
 		// 머릿말
-		std::cout << headersize << endl;
+		//std::cout << headersize << endl;
 
 		cout << setw(field1_width) << left << "이름" <<
 			setw(field2_width) << right << "가격" <<
@@ -208,13 +208,11 @@ int main()
 
 	int playerX = 10;
 	int playerY = 10;
+		
+	/*Shop shop;
+	shop.SaveShopData("shop3.txt");*/
 
-	Shop shop;
-	//Shop shop("shop2.txt");
-	//shop.SaveShopData("shop3.txt");
-
-	/*Shop shop("shop")
-	shop.LoadShopData("shop2.txt");*/
+	//Shop shop("shop3.txt");	
 
 	NPC npc1("shop1.txt", 3, 5);
 	NPC npc2("shop2.txt", 10, 2);
@@ -245,8 +243,16 @@ int main()
 				playerX++;
 			}
 		}
-		
-		shop.ShowItems();
+			
+		npc1.ShowNPC();
+		npc2.ShowNPC();
+		npc3.ShowNPC();
+
+		Interact(playerX, playerY, npc1);
+		Interact(playerX, playerY, npc2);
+		Interact(playerX, playerY, npc3);
+
+		//shop.ShowItems();
 
 		ConsoleUtil::GotoXY(playerX, playerY);
 		std::cout << "a";
@@ -254,3 +260,4 @@ int main()
 		_getch();
 	}
 }
+

@@ -1,7 +1,1 @@
-﻿  main.cpp
-C:\Users\user\Desktop\GamePrograming4\UtilityProject\ConsoleUtility.h(41,3): error C2065: 'cout': 선언되지 않은 식별자입니다.
-  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\user\Desktop\GamePrograming4\UtilityProject\ConsoleUtility.h(41,66): error C2065: 'endl': 선언되지 않은 식별자입니다.
-  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
-  
+﻿

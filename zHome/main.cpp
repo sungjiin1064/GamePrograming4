@@ -79,86 +79,43 @@
 
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <thread>
-#include <chrono>
+//#include <algorithm>
+//#include <thread>
+//#include <chrono>
+using namespace std;
 
-struct Monster {
-    int x = 20;  // 몬스터 초기 X 좌표
-    int y = 10;  // 몬스터 초기 Y 좌표
-    int health = 50;
-    std::string image = "(''  )"; // 몬스터 이미지
-};
+int main()
+{
+	//정수 5개를 벡터에 입력받고, 모두 출력하시오.
 
-class Game {
-public:
-    int characterX = 0; // 캐릭터는 X=0에 고정
-    int characterY = 10; // 캐릭터는 Y=10에 고정
-    std::string characterImage = "(  '')"; // 캐릭터 이미지
-    std::vector<Monster> monsters; // 몬스터 리스트
 
-    void spawnMonster() {
-        monsters.push_back({}); // 몬스터는 항상 X=20에서 등장
-    }
 
-    void update() {
-        // 몬스터 이동 (왼쪽으로)
-        for (auto& monster : monsters) {
-            monster.x--;
-        }
+	//벡터에 1~10까지 넣고 짝수만 출력하시오.
 
-        // 화면 밖으로 나간 몬스터 제거
-        monsters.erase(std::remove_if(monsters.begin(), monsters.end(),
-            [](const Monster& m) { return m.x < -1; }), monsters.end());
 
-        // 캐릭터 앞에 몬스터가 있으면 전투 시작
-        for (auto& monster : monsters) {
-            if (monster.x == characterX) {
-                battle(monster);
-            }
-        }
-    }
 
-    void battle(Monster& monster) {
-        std::cout << "전투 시작! 몬스터 체력: " << monster.health << "\n";
-        monster.health -= 20; // 캐릭터 공격
-        if (monster.health <= 0) {
-            std::cout << "몬스터 처치!\n";
-            monster.x = -1; // 이후 `remove_if`에서 제거됨
-        }
-    }
+	//벡터에서 가장 큰 수를 찾아 출력하시오.
+	std::vector<int> nums = { 10,50,40,60 };
 
-    void render() {
-        std::cout << "\n게임 화면:\n";
-        for (int i = 0; i < 21; i++) { // 21칸 화면 표현 (X=0~20)
-            bool isMonster = false;
-            for (const auto& monster : monsters) {
-                if (monster.x == i) {
-                    std::cout << monster.image << " "; // 몬스터 이미지 출력
-                    isMonster = true;
-                    break;
-                }
-            }
-            if (i == characterX) std::cout << characterImage << " "; // 캐릭터 이미지 출력
-            else if (!isMonster) std::cout << "- ";
-        }
-        std::cout << "\n";
-    }
+	int maxNum = nums[0];
 
-    void run() {
-        int step = 0;
-        while (step++ < 30) {
-            system("cls");
-            // 간단한 반복 실행
-            if (step % 5 == 0) spawnMonster(); // 일정 주기로 몬스터 생성
-            update();
-            render();
-            std::this_thread::sleep_for(std::chrono::milliseconds(500)); // 딜레이
-        }
-    }
-};
+	for (int i = 0; i < nums.size();i++)
+	{
+		if (nums[i] > maxNum)
+		{
+			nums[i] = maxNum;
+		}
+	}
 
-int main() {
-    Game game;
-    game.run();
+	cout << maxNum << endl;
+
+
+
+	//사용자로부터 숫자를 계속 입력받고(음수 입력 시 종료), 벡터에 저장한 뒤 평균을 출력하시오.
+
+
+	//두 개의 벡터를 합쳐 새로운 벡터로 만들고 출력하시오.
+
+
+
 }
