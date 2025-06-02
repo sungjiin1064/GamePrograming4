@@ -35,6 +35,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ch12_Associate Container", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ch13_ShopNPC", "..\Ch13_ShopNPC\Ch13_ShopNPC.vcxproj", "{61B7090B-5136-4A13-8D4D-78DDF27950D9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ch14_Hash", "..\Ch14_Hash\Ch14_Hash.vcxproj", "{065B26DB-A630-4DC4-874F-1595CE5C0377}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -171,6 +173,14 @@ Global
 		{61B7090B-5136-4A13-8D4D-78DDF27950D9}.Release|x64.Build.0 = Release|x64
 		{61B7090B-5136-4A13-8D4D-78DDF27950D9}.Release|x86.ActiveCfg = Release|Win32
 		{61B7090B-5136-4A13-8D4D-78DDF27950D9}.Release|x86.Build.0 = Release|Win32
+		{065B26DB-A630-4DC4-874F-1595CE5C0377}.Debug|x64.ActiveCfg = Debug|x64
+		{065B26DB-A630-4DC4-874F-1595CE5C0377}.Debug|x64.Build.0 = Debug|x64
+		{065B26DB-A630-4DC4-874F-1595CE5C0377}.Debug|x86.ActiveCfg = Debug|Win32
+		{065B26DB-A630-4DC4-874F-1595CE5C0377}.Debug|x86.Build.0 = Debug|Win32
+		{065B26DB-A630-4DC4-874F-1595CE5C0377}.Release|x64.ActiveCfg = Release|x64
+		{065B26DB-A630-4DC4-874F-1595CE5C0377}.Release|x64.Build.0 = Release|x64
+		{065B26DB-A630-4DC4-874F-1595CE5C0377}.Release|x86.ActiveCfg = Release|Win32
+		{065B26DB-A630-4DC4-874F-1595CE5C0377}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
