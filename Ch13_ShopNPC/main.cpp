@@ -17,8 +17,6 @@ const int field1_width = 30;
 const int field2_width = 15;
 const int field3_width = 15;
 
-#pragma region Player 코드
-
 class Item
 {
 public:
@@ -29,6 +27,8 @@ public:
 	Item() = default;
 	Item(string name, int price, string type) : name(name), price(price), type(type) {}
 };
+
+#pragma region Player 코드
 
 class Player
 {
@@ -42,10 +42,13 @@ public:
 
 	void ShowPlayerUI()
 	{
+		system("cls");
 		ConsoleUtil::GotoXY(70, 1);
 		cout << "플레이어의 정보";
 		ConsoleUtil::GotoXY(70, 3);
-		cout << "소지금 : " << money;
+		cout << "소지금 : " << money << endl;;
+		ConsoleUtil::GotoXY(70, 5);
+		cout << "보유한 아이템"  << endl;;
 	}
 
 	void BuyItem(Item& item)
@@ -213,10 +216,10 @@ public:
 	{
 		int select;
 
-		cout << "번호를 입력하여 아이템을 구해할 수 있습니다." << endl;
+		cout << "번호를 입력해서 아이템을 구해할 수 있습니다." << endl;
 		cin >> select;
 
-		BuyItem(select, player);
+		BuyItem(select, player);		
 	}
 
 };
@@ -254,7 +257,7 @@ public:
 
 	void ShowNPC()
 	{
-		if (isActivate = false)
+		if (isActivate == false)
 		{
 			return;
 		}
@@ -269,11 +272,10 @@ void Interact(Player& player,NPC& npc,int UI_X, int UI_Y )
 {
 	if (player.posX == npc.posX && player.posY == npc.posY)
 	{
-		if(npc.isActivate == false) // if(!npc.isActivate == false)
-		{
+		if(npc.isActivate == false) // if(!npc.isActivate)
+		{			
 			return;
 		}
-
 		npc.ShowItems(UI_X, UI_Y);
 		npc.Interact(player);
 	}
