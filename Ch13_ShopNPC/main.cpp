@@ -7,6 +7,8 @@
 #include <fstream> // ifstream ofstream
 #include <iomanip> // 입출력 조작 헤어
 #include <utility> // pair클래스가 정의되어있다.
+#include <string>
+#include <unordered_map>
 
 using namespace std;
 
@@ -26,6 +28,33 @@ public:
 public:
 	Item() = default;
 	Item(string name, int price, string type) : name(name), price(price), type(type) {}
+
+	virtual void Use() = 0;
+};
+
+class Weapon : public Item
+{
+public:
+	Weapon(string name, int price, string type) : Item(name, price, type) {}
+
+	void Use() override
+	{
+		cout << "무기를 사용합니다" << endl;
+	}
+};
+
+/// <summary>
+/// 요약
+/// </summary>
+class UsableItem : public Item
+{
+public:
+	UsableItem(string name, int price, string type) : Item(name, price, type) {}
+
+	void Use() override
+	{
+		cout << "소비성 아이템을 사용합니다" << endl;
+	}
 };
 
 #pragma region Player 코드
@@ -33,9 +62,44 @@ public:
 class Player
 {
 private:
+	std::unordered_map<string, Item*> inventory;
 
 public:
 	int posX, posY, money;
+
+#pragma region 인벤토리 코드
+
+	void AddItem(Item* item)
+	{
+		inventory.insert({ item->name, item });
+	}
+
+	void RemoveItem(string name)
+	{
+		if (inventory.find(name) != inventory.end())
+		{
+			inventory.erase(name);
+		}
+		else
+		{
+			cout << "인벤토리에 해당하는 아이템이 없습니다." << endl;
+		}
+	}
+
+	void RemoveItem(Item* item)
+	{		
+		inventory.erase(item->name);
+	}
+
+	void Use(Item* item)
+	{
+
+		item->Use();
+	}
+
+#pragma endregion
+
+	
 
 	Player() = default;
 	Player(int posX, int posY, int money) : posX(posX), posY(posY), money(money) {}
@@ -64,24 +128,24 @@ public:
 class Shop
 {
 private:
-	std::map<int, Item> items;
+	std::map<int, Item*> items;
 
 public:
 	Shop()
 	{
-		/*items.insert({ 0, Item("롱소드", 100, "무기") });
+		items.insert({ 0, Item("롱소드", 100, "무기") });
 		items.insert(make_pair(1, Item("체력포션", 5, "소비")));
 		std::pair<int, Item> p1(2, Item("나무방패", 50, "무기"));
 		items.insert(p1);
 		items.insert({ 3, Item("마나포션", 5, "소비") }); 
-		items.insert({ 4, Item("귀걸이", 30, "악세사리") });*/
+		items.insert({ 4, Item("귀걸이", 30, "악세사리") });
 
-		items.insert({ 0, Item("강한포션", 10, "소비") });
+		/*items.insert({ 0, Item("강한포션", 10, "소비") });
 		items.insert(make_pair(1, Item("체력포션", 5, "소비")));
 		std::pair<int, Item> p1(2, Item("해독포션", 11, "소비"));
 		items.insert(p1);
 		items.insert({ 3, Item("마나포션", 5, "소비") });
-		items.insert({ 4, Item("스피드포션", 20, "소비") });
+		items.insert({ 4, Item("스피드포션", 20, "소비") });*/
 
 		//items.insert({ 0, Item("롱소드", 100, "무기") });
 		//items.insert(make_pair(1, Item("숏소드", 50, "무기")));
