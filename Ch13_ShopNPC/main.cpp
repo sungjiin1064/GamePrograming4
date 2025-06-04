@@ -44,7 +44,8 @@ public:
 };
 
 /// <summary>
-/// 요약
+/// 아이템을 use했을 때 사라지는 종류의 아이템입니다.
+/// Player클래스 의 RemoveItem을 사용하세요.
 /// </summary>
 class UsableItem : public Item
 {
@@ -54,6 +55,7 @@ public:
 	void Use() override
 	{
 		cout << "소비성 아이템을 사용합니다" << endl;
+		// Remove되는 아이템을 호출하세요.
 	}
 };
 
@@ -88,7 +90,11 @@ public:
 
 	void RemoveItem(Item* item)
 	{		
-		inventory.erase(item->name);
+		if (inventory.find(item->name) != inventory.end())
+		{
+			inventory.erase(item->name);
+
+		}
 	}
 
 	void Use(Item* item)
@@ -106,18 +112,36 @@ public:
 
 	void ShowPlayerUI()
 	{
+		int count = 0;
+
 		system("cls");
 		ConsoleUtil::GotoXY(70, 1);
 		cout << "플레이어의 정보";
 		ConsoleUtil::GotoXY(70, 3);
 		cout << "소지금 : " << money << endl;;
 		ConsoleUtil::GotoXY(70, 5);
-		cout << "보유한 아이템"  << endl;;
+		cout << "보유한 아이템 목록"  << endl;;
+		ConsoleUtil::GotoXY(70, 7);
+		for (const auto& item : inventory)
+		{
+			cout << item.first << " ";
+			count++;
+
+			if (count % 2 == 0)
+			{
+				cout << endl;
+				ConsoleUtil::GotoXY(70, 7 + (count / 2));
+			}
+		}
+
 	}
 
-	void BuyItem(Item& item)
+	void BuyItem(Item* item)
 	{
-		money -= item.price;
+		money -= item->price;
+		AddItem(item);
+		Use(item); // 구입시 아이템 자동사용
+		
 	}
 };
 
@@ -133,26 +157,26 @@ private:
 public:
 	Shop()
 	{
-		items.insert({ 0, Item("롱소드", 100, "무기") });
-		items.insert(make_pair(1, Item("체력포션", 5, "소비")));
-		std::pair<int, Item> p1(2, Item("나무방패", 50, "무기"));
+		items.insert({ 0, new Weapon("롱소드", 100, "무기") });
+		items.insert(make_pair(1, new Weapon("체력포션", 5, "소비")));
+		std::pair<int, Item*> p1(2, new Weapon("나무방패", 50, "무기"));
 		items.insert(p1);
-		items.insert({ 3, Item("마나포션", 5, "소비") }); 
-		items.insert({ 4, Item("귀걸이", 30, "악세사리") });
+		items.insert({ 3, new Weapon("마나포션", 5, "소비") });
+		items.insert({ 4, new Weapon("귀걸이", 30, "악세사리") });
 
-		/*items.insert({ 0, Item("강한포션", 10, "소비") });
-		items.insert(make_pair(1, Item("체력포션", 5, "소비")));
-		std::pair<int, Item> p1(2, Item("해독포션", 11, "소비"));
+		/*items.insert({ 0, new Weapon("강한포션", 10, "소비") });
+		items.insert(make_pair(1, new Weapon("체력포션", 5, "소비")));
+		std::pair<int, Item*> p1(2, new Weapon("해독포션", 11, "소비"));
 		items.insert(p1);
-		items.insert({ 3, Item("마나포션", 5, "소비") });
-		items.insert({ 4, Item("스피드포션", 20, "소비") });*/
+		items.insert({ 3, new Weapon("마나포션", 5, "소비") });
+		items.insert({ 4, new Weapon("스피드포션", 20, "소비") });*/
 
-		//items.insert({ 0, Item("롱소드", 100, "무기") });
-		//items.insert(make_pair(1, Item("숏소드", 50, "무기")));
-		//std::pair<int, Item> p1(2, Item("나무방패", 50, "무기"));
+		//items.insert({ 0, new Weapon("롱소드", 100, "무기") });
+		//items.insert(make_pair(1, new Weapon("숏소드", 50, "무기")));
+		//std::pair<int, Item*> p1(2, new Weapon("나무방패", 50, "무기"));
 		//items.insert(p1);
-		//items.insert({ 3, Item("강철검", 500, "무기") });
-		//items.insert({ 4, Item("대검", 300, "무기") });
+		//items.insert({ 3, new Weapon("강철검", 500, "무기") });
+		//items.insert({ 4, new Weapon("대검", 300, "무기") });
 	}
 
 	Shop(std::string filename)
@@ -186,9 +210,21 @@ public:
 		}*/
 
 		while (in_file>>name>>price>>type)
-		{			
-			items.insert({ index ,Item(name, price, type) });
-			index++;
+		{	
+			if (type == "무기")
+			{
+				items.insert({ index , new Weapon(name, price, type) });
+				index++;
+			}
+			/*else if (type == "악세사리")
+			{
+
+			}*/
+			else
+			{
+				items.insert({ index , new UsableItem(name, price, type) });
+				index++;
+			}
 		}
 
 		in_file.close();
@@ -211,9 +247,9 @@ public:
 
 		for (int i = 0; i < items.size(); i++) 
 		{
-			out_file << setw(field1_width) << left << items[i].name <<
-				setw(field2_width) << right << items[i].price <<
-				setw(field3_width) << right << items[i].type << endl;
+			out_file << setw(field1_width) << left << items[i]->name <<
+				setw(field2_width) << right << items[i]->price <<
+				setw(field3_width) << right << items[i]->type << endl;
 		}
 
 		out_file.close();
@@ -244,9 +280,9 @@ public:
 		for (int i = 0; i < items.size(); i++) // 인덱스 기반 접근이 가능한 자료구조여야 한다.
 		{ 
 			//ConsoleUtil::GotoXY(0, 10);
-			cout << setw(field1_width) << left << items[i].name <<
-				setw(field2_width) << right << items[i].price <<
-				setw(field3_width) << right << items[i].type << endl;
+			cout << setw(field1_width) << left << items[i]->name <<
+				setw(field2_width) << right << items[i]->price <<
+				setw(field3_width) << right << items[i]->type << endl;
 
 			cout << setw(total_width) << setfill('-') << "" << endl;
 			cout << setfill(' ');
@@ -258,9 +294,9 @@ public:
 	{
 		if (items.find(index) != items.end())
 		{
-			Item itemInstance = items[index];
+			Item* itemInstance = items[index];
 
-			if (player.money >= itemInstance.price)
+			if (player.money >= itemInstance->price)
 			{
 				player.BuyItem(itemInstance);
 				return true;

@@ -114,25 +114,25 @@ public:
 		data.push_back(e);
 	}
 
-	T fornt()
+	T front()
 	{
 		return data[0];
 	}
 
 	void pop()
 	{
-		size--;
+		_size--;
 		data.pop_front();
 	}
 
 	void size()
 	{
-		retuen _size;
+		return _size;
 	}
 
-	void empty()
+	bool empty()
 	{
-		retuen _size == 0;
+		return _size == 0;
 	}
 };
 
@@ -159,18 +159,18 @@ public:
 
 	void pop()
 	{
-		size--;
+		_size--;
 		data.pop_back();
 	}
 
 	void size()
 	{
-		retuen _size;
+		return _size;
 	}
 
-	void empty()
+	bool empty()
 	{
-		retuen _size == 0;
+		return _size == 0;
 	}
 
 };
@@ -179,7 +179,7 @@ void Test4()
 {
 	cout << endl;
 	cout << endl;
-	cout << "직접만큐 사용 예시" << endl;
+	cout << "직접만든 큐 사용 예시" << endl;
 
 	MyQueue<int> nums;
 
@@ -199,7 +199,24 @@ void Test4()
 
 void Test5()
 {
+	cout << endl;
+	cout << endl;
+	cout << "직접만든 스택 사용 예시" << endl;
 
+	MyStack<int> nums;
+
+	for (int i = 0; i < 10; i++)
+	{
+		nums.push(i);
+	}
+
+	cout << "nums의 데이터 출력" << endl;
+
+	while (!nums.empty())
+	{
+		cout << nums.top() << " ";
+		nums.pop();
+	}
 }
 
 int main()
